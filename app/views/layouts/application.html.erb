@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Money</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag  'jquery-1.4.2.min', 'rails', 'highcharts', 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+  <p class="navbar-text pull-right">
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to "登出", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% else %>
+        <%= link_to "註冊", new_user_registration_path, :class => 'navbar-link'  %> |
+        <%= link_to "登入", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
+      </p>
+  </head>
+  
+<body>
+<div class="container">
+  <%= yield %>
+</div>
+
+</body>
+</html>

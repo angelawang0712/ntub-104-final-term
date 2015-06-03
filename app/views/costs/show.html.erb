@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cost name:</strong>
+  <%= @cost.cost_name %>
+</p>
+
+<p>
+  <strong>起始日:</strong>
+  <%= @cost.start_time %>
+</p>
+
+<p>
+  <strong>結束日:</strong>
+  <%= @cost.end_time %>
+</p>
+
+<p>
+  <strong>金額:</strong>
+  <%= @cost.cost_price %>
+</p>
+
+<p>
+  <strong>類別:</strong>
+  <%= @cost.sort.try(:title) %>
+</p>
+
+<%= link_to 'Edit', edit_cost_path(@cost) %> |
+<%= link_to 'Back', costs_path %>

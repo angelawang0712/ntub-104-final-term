@@ -1,0 +1,36 @@
+<div class="form">
+<%= simple_form_for(@cost) do |f| %>
+  <% if @cost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cost.errors.count, "error") %> prohibited this cost from being saved:</h2>
+
+      <ul>
+      <% @cost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="actions">
+    
+    <%= link_to '返回', costs_path ,class:'btn btn-link btn-lg'%>
+    <%= f.submit "新增/更新" ,class:'btn btn-link btn-lg'%>
+  </div>
+  <div class="field">
+    
+    <%= f.input :cost_name, label:'預算名稱：' %>
+    </br>
+    
+    <%= f.input :start_time, as: :date,:input_html => { :value => Date.today}, html5: true, label: "起始日：" %></br>
+    <%= f.input :end_time, as: :date,:input_html => { :value => Date.today}, html5: true, label: "結束日：" %></br>
+	  
+    <%= f.input :cost_price ,label:"金額：" %>
+    </br>
+    
+    <%= f.association :sort, label:'類別：' %>
+  </div>
+  
+  
+  
+<% end %>
+</div>

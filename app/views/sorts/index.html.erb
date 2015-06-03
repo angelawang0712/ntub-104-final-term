@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>類別</h1>
+<%= link_to '返回首頁', accounts_path ,class:'btn btn-link btn-lg'%>|
+<%= link_to '新增類別', new_sort_path ,class:'btn btn-link btn-lg'%>
+<table  class="table table-hover">
+  <thead>
+    <tr>
+      <th>類別名稱</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sorts.each do |sort| %>
+      <tr>
+        
+        <td><%= link_to sort.title, sort %></td>
+        <td><%= link_to 'Edit', edit_sort_path(sort) ,class:'btn btn-warning'%></td>
+        <td><%= link_to 'Destroy', sort, method: :delete, data: { confirm: 'Are you sure?' } ,class:'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
