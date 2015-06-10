@@ -19,13 +19,6 @@ gem 'simple_form'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'devise'
-gem 'nifty-generators'
-gem 'sunspot_rails'
-gem 'progress_bar'
-
-group :development do
-    gem 'sunspot_solr'
-end
 
 
 # Use jquery as the JavaScript library
